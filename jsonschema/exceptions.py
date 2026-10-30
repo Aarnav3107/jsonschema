@@ -30,7 +30,9 @@ if TYPE_CHECKING:
 WEAK_MATCHES: frozenset[str] = frozenset(["anyOf", "oneOf"])
 STRONG_MATCHES: frozenset[str] = frozenset()
 
-_JSON_PATH_COMPATIBLE_PROPERTY_PATTERN = re.compile("^[a-zA-Z][a-zA-Z0-9_]*$")
+_JSON_PATH_COMPATIBLE_PROPERTY_PATTERN = re.compile(
+    r"^[a-zA-Z][a-zA-Z0-9_]*\Z",
+)
 
 _unset = _utils.Unset()
 
